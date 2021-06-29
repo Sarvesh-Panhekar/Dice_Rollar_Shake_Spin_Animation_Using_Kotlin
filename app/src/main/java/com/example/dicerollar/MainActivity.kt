@@ -1,5 +1,6 @@
 package com.example.dicerollar
 
+import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.animation.Animation
@@ -18,9 +19,14 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
         imgDice = findViewById(R.id.imgDice)
+
+        val player = MediaPlayer.create(this, R.raw.soundeffect)
+
         val btnRoll = findViewById<Button>(R.id.btnRoll)
         btnRoll.setOnClickListener {
+            player.start()
             // disable the button click
             btnRoll.isEnabled = true
             getRandomValue()
