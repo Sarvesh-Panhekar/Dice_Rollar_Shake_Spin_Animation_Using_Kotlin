@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
             getRandomValue()
         }
 
-        // add dice images to list
+
         diceImages.add(R.drawable.dice_1)
         diceImages.add(R.drawable.dice_2)
         diceImages.add(R.drawable.dice_3)
@@ -40,32 +40,33 @@ class MainActivity : AppCompatActivity() {
         diceImages.add(R.drawable.dice_5)
         diceImages.add(R.drawable.dice_6)
 
-        // initialize the animation
+
+
         animation = AnimationUtils.loadAnimation(this@MainActivity, R.anim.rotate_animation)
 
     }
 
     private fun getRandomValue() {
-        val random = Random().nextInt(6) // returns number between 0-5
+        val random = Random().nextInt(6)
 
-        // start the animation
+
         imgDice.startAnimation(animation)
 
-        // now we will get when the animation starts and when it ends
+
 
         animation.setAnimationListener(object : Animation.AnimationListener{
             override fun onAnimationRepeat(p0: Animation?) {
             }
 
             override fun onAnimationEnd(p0: Animation?) {
-                // when animation ends we will set the dice image
-                imgDice.setImageResource(diceImages.elementAt(random)) // this will set the dice image randomly
-                // enable the button click
+
+                imgDice.setImageResource(diceImages.elementAt(random))
+
 
             }
 
             override fun onAnimationStart(p0: Animation?) {
-                // when animation starts we will set default dice image
+
                 imgDice.setImageResource(R.drawable.empty_dice)
             }
         })
