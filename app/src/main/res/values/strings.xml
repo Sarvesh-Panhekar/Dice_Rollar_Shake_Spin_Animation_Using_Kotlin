@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Roll The Dice</string>
     <string name="buttonText">Roll</string>
+    <string name="dice_ui_bg">dice ui bg</string>
 </resources>
